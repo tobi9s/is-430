@@ -1,0 +1,52 @@
+\chapter{Case Overview}
+
+This chapter provides a high-level overview about what happened in this incident, which systems and information was affected, which major weaknesses where identified during the incident and the consequences that happened after the incident.
+
+\section{What happened?}
+
+On March 07, 2017, Apache Struts Project Management Committee publicly announced the \textbf{ CVE-2017-5638} vulnerability affecting the Apache Struts software and released the patch.
+\newline
+Since Equifax's self-developed \textbf{Automated Consumer Interview System} (ACIS) application uses Apache Struts, their Global Threat and Vulnerability Management team was asked to apply the patch.
+\newline
+However, scans from Equifax's security team did not detect the vulnerability in their systems and therefore, the patch was not applied.
+\newline
+Due to the patch on being applied, between May 13, 2017 - July 30, 2017, attackers gained access Equifax's network through CVE-2017-5638 and performed up to 9.000 database queries within Equifax's systems and exfiltrated \textbf{personally identifiable information} (PII) from Equifax consumers.
+\newline
+On July 29, 2017, Equifax renewed the security certificate for monitoring ACIS' network traffic and observed suspicious network traffic going through ACIS and subsequently, blocked the traffic. The security certificate has been expired for 19 months prior to the renewal.
+\newline
+After further analysis, Equifax concluded that they have been breached and that the attackers have accessed a large amount of consumer's PII.
+
+\section{Affected Systems and Information}
+
+The initial point of compromise was ACIS as the patch for CVE-2017-5638 has not been applied to it at the time of the incident. From there, the attackers gained access to the databases outside of the original ACIS environment.
+\newline
+The compromised information were highly sensitive consumer information, including:
+\begin{itemize}
+\item Full names
+\item Dates of birth
+\item Addresses
+\item Social Security numbers
+\item Credit card information for some consumers
+\end{itemize}
+In that sense, not only ACIS itself was affected, but also the databases containing the consumer information as well as Equifax's network.
+
+\section{Major Weaknesses}
+
+The report states that the incident didn't result from one single technical vulnerability but rather from multiple interconnected weaknesses.
+\begin{itemize}
+\item \textbf{Organizational structure:} Equifax separated IT and security into two different departments where the chief security officer (CSO) reported to the chief legal officer (CLO) instead of the chief information officer (CIO). This split caused disruptions in the collaboration and communication between both departments, resulting in ineffective coordination.
+\item \textbf{Policy and execution:} As the IT and security department were split, there was no clear responsibility between the departments for developing security policies and implementing such policies. One example was their patch management process, while both teams were made aware that the patch for CVE-2017-5638 had to be applied, there were no employees designated to actually update the system, meaning that no one could have been held accountable for not applying the patch. Another example was their certificate management process as the security team had plans for a dedicated certificate process but there was no one to implement the process.
+\item \textbf{Legacy systems:} Equifax's technical environment grew over time through acquisitions and self-developed solutions. Over time, even critical applications such as ACIS operated on legacy infrastructure that was difficult to patch, monitor and modernize. Additionally, Equifax didn't know what applications ran on their legacy infrastructure as they didn't maintain a sufficiently comprehensive inventory of it's software environment and ACIS itself had multiple security issues that were not sufficiently addressed prior to the incident.
+\end{itemize}
+
+\section{Business Consequences}
+The incident had immediate consequences as highly sensitive information of up to 148 million consumers, including full names, addresses, Social Security numbers, etc.
+\newline
+Beside the consequences the incident had on it's consumers, Equifax itself suffered various business consequences:
+\begin{itemize}
+\item Shortly after the incident was publicly announced, Equifax's CIO, CSO and CEO have been let go as well as a highly ranked employee who managed a number of systems within Equifax.
+\item Equifax signicantly invested in remediation aimed to improve their security architecture and processes, resulting in higher spending.
+\item Regulatory measures as Equifax agreed to improve their security measures, including oversight, risk assessment, policies and processes.
+\item Operational disruptions as Equifax took ACIS offline when detected the breach and had to establish large-scale customer support when the breach was publicly announced.
+\item Finally, although not explicitly stated in the report, the incident most likely caused a loss in consumer trust as Equifax's entire business relies on the ability to secure highly sensitive consumer data.
+\end{itemize}

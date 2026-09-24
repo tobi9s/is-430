@@ -1,0 +1,13 @@
+\chapter{Security Controls and Architecture Improvement}
+
+Based on this incident, I identified the following security controls that could have prevented, detected, limited, or helped recover from the incident in regard to the CIS critical security controls \cite{cis}.
+\begin{itemize}
+\item \textbf{Inventory and Control of Software Assets:} As the IT and security department had separate software inventory lists, maintaining a single list as a single source of truth could have helped Equifax to identify systems that needed the patch for CVE-2017-5638.
+\item \textbf{Data Protection:} The breach involved unauthorized access to consumer's PII. Measures such as encryption and access restrictions could have reduced the impact of the breach by making sensitive data more difficult to obtain without proper authorization.
+\item \textbf{Access Control Management:} The attackers obtained employee credentials in order to perform queries on Equifax's database systems. Measures such as least-privilege access or restricting employees to only the resources required could have limited the attacker's ability to move through Equifax's environment.
+\item \textbf{Continuous Vulnerability Management:} This control could have highly limited the impact of the incident as Equifax failed to detect CVE-2017-5638 on their systems. Regular vulnerability scanning could have helped Equifax identify the systems that needed the patch and ensure that it would be applied.
+\item \textbf{Audit Log Management:} The attackers performed up to 9.000 database queries to Equifax's systems. Proper logging could have helped Equifax to identify the suspicious actions on their databases and potentially reduce the amount of data exfiltrated.
+\item \textbf{Network Infrastructure Management:} Network segmentation could have also limited the attacker's ability to move as the they reached the database systems because they were in the same network as ACIS. Therefore, a network segmentation could have prevented the attackers to move to the databases and thus, severely limiting the scope of the breach.
+\item \textbf{Network Monitoring and Defense:} Network monitoring could have also helped Equifax to identify the incident earlier as their monitoring was not functioning due to ACIS' security certificate being expired. Appropriate monitoring and maintenance would have led to an earlier detection of the incident.
+\item \textbf{Application Software Security:} ACIS was the intial point of compromise due to not having the patch for CVE-2017-5638 applied. Better security practices could have helped to identify the vulnerability earlier and patch it before it could have gotten exploited.
+\end{itemize}
