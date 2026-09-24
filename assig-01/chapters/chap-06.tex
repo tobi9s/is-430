@@ -1,0 +1,13 @@
+\chapter{Security Controls: How Could the Incident Have Been Prevented?}
+Based on this incident, I propose the following eight security controls that could mitigate the damages or even prevent it \cite{cis}:
+\begin{itemize}
+\item \textbf{Secure Configuration of
+Enterprise Assets and Software:} The configuration that multi-factor authentication is enabled when employees are outside Twitter's VPN while disabled when inside - multi-factor authentication should have been the default configuration.
+\item \textbf{Account Management:} Limiting the use of administrative tools or binding access to entirely different accounts, could have reduced the attacker's ability to move from compromised employee account to administrative functionality.
+\item \textbf{Access Control Management:} Stricter access to administrative tools, like enforcing multi-factor authentication to access such tools could have made obtained credentials less useful to the attackers.
+\item \textbf{Audit Log Management:} Logging and monitoring could have helped to identify unusual administrative activities such as employee accounts accessing administrative tools or making account changes.
+\item \textbf{Email and Web Browser Protections:} The attackers obtained credentials when the employees typed their credentials into a fake system. Stronger browser security like detecting malicious websites could have made it harder for the attackers to obtain the credentials.
+\item \textbf{Network Monitoring and Defense:} Monitoring network traffic and administrative activity could have helped to detect suspicious behaviour after the attackers gained access to the administrative tools
+\item \textbf{Security Awareness and Skills Training:} Employees with access to administrative tools should have received training on phishing and social engineering to recognize the attack. 
+\item \textbf{Incident Response Management:} Once the incident was detected, a comprehensive incident response process could have helped Twitter to quickly disable affected accounts, revoke accesses, and prevent further fraudulent messages.
+\end{itemize}

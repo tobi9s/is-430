@@ -1,0 +1,33 @@
+\documentclass[12pt]{scrreprt}
+\usepackage[
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+]{geometry}
+\input{configs/config}
+\begin{document}
+\TitelDerArbeit{Cybersecurity Incident Analysis — From Attack to Control}
+\AutorDerArbeit{Truong Khang Tobias Nguyen}
+\input{configs/cover}
+\pagenumbering{roman}
+\normalfont
+%\lstlistoflistings
+\clearpage
+% \ihead{\chaptername~\thechapter}
+\pagenumbering{arabic}
+\input{chapters/chap-01}
+\input{chapters/chap-02}
+\input{chapters/chap-03}
+\input{chapters/chap-04}
+\input{chapters/chap-05}
+\input{chapters/chap-06}
+
+\cleardoublepage
+\thispagestyle{plain}
+
+\bibliographystyle{apacite}
+\bibliography{references}
+
+\cleardoublepage
+\end{document}

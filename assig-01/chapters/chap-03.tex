@@ -1,0 +1,12 @@
+\chapter{Why Did the Attack Happen?}
+Although this incident has been facilitated by means of social engineering rather than exploiting technical vulnerabilities, there are still technical factors (as well as non-technical factors) that allowed this attack to go through. 
+\newline
+The factors are as followed:
+\begin{itemize}
+\item \textbf{Weak authentication:} The attackers were able to authenticate into Twitter's internal systems only using the credentials of the targeted employees. Although Twitter had two-factor-authentication in place, the attackers were able to bypass it once they entered Twitter's VPN portal with the obtained credentials \cite{arstechnica}.
+\item \textbf{Phishing or social engineering:} The attackers managed to obtain employee account credentials by tricking employees into typing their credentials into a phishing page.
+\item \textbf{Misconfiguration:} Although there was multi-factor authentication in place, it was avoided when the attackers connected to Twitter's VPN. 
+\item \textbf{Insufficient monitoring:} With Twitter's internal administrative tools, the attackers were able to change settings of the compromised accounts, such as their credentials. Although not explicitly stated, it can be assumed that there was no monitoring in place that was able to detect the change of settings of multiple high-profile Twitter accounts.
+\item \textbf{Weak security awareness:} The last point is the weak security awareness in place, for employees as well as users. Employees who handed over their credentials were not sufficiently trained to check or question the fake system where they typed their credentials in, or to downright refuse to comply with such requests. Even though the fraudulent messages came from verified, and thus legitimate accounts, users were not sufficiently made aware to not trust such offers.
+\end{itemize}
+The combination of these factors allowed the attackers to breach Twitter's systems and obtain access to the high-profile accounts that they used to promote their scam.
